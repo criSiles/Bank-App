@@ -1,5 +1,4 @@
 const addTransactionFormElement = document.querySelector("#addTransactionForm");
-const histroyList = document.querySelector("#history");
 
 addTransactionFormElement.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -12,18 +11,37 @@ addTransactionFormElement.addEventListener("submit", async (event) => {
     description: inputDescriptionElement.value,
   };
 
+  printHistory(transaction);
+  printMoney(transaction.amount);
 });
 
-/*
-function printInput() {
-    var moneyAmount= document.getElementById('amount').value;
-    var result = document.getElementById('result');
+function printHistory(movement) {
+  const histroyList = document.querySelector("#history");
 
-    if (moneyAmount > 0) {
-         result.textContent = myIncome;
-     } else {
-         result.textContent = myOutcome;
+  const movementElement = document.createElement("article");
+
+  let movementContent = `
+  <p>${movement.description} ${movement.amount}</p>`;
+
+  movementElement.innerHTML = movementContent;
+  histroyList.prepend(movementElement);
+}
+
+function addIncome(money){
+  const totalIncome = document.querySelector("#income");
+  // totalIncome.value += money;
+  // totalIncome = totalIncome + money;
+}
+
+function addOutcome(money){
+  const totalOutcome = document.querySelector("#outcome");
+  totalOutcome += Math.abs(money);
+}
+
+function printMoney(money) {
+  if (money > 0) {
+    addIncome(money);
+  } else {
+    addOutcome(money);
   }
-
-  submitButton.addEventListener('click', printInput, false);
-}*/
+}
