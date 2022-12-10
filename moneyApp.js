@@ -1,6 +1,6 @@
 const addTransactionFormElement = document.querySelector("#addTransactionForm");
-
 addTransactionFormElement.addEventListener("submit", async (event) => {
+
   event.preventDefault();
 
   const inputMoneyElement = document.querySelector("#amount");
@@ -11,9 +11,16 @@ addTransactionFormElement.addEventListener("submit", async (event) => {
     description: inputDescriptionElement.value,
   };
 
-  printHistory(transaction);
-  printMoney(transaction.amount);
-  calculatingSavings();
+  inputMoneyElement.value = ""
+  inputDescriptionElement.value = ""
+  if (transaction.amount != "" && transaction.description != ""){
+
+    printHistory(transaction);
+    printMoney(transaction.amount);
+    calculatingSavings();
+  }else{
+  window.alert("Please fill both camps")
+  }
 });
 
 function printHistory(movement) {
