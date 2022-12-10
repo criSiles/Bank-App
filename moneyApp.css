@@ -6,3 +6,12 @@ body {
   font-family: 'Lexend Deca', sans-serif;
   color: black;
 }
+
+.historyItem {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  /* remove bullet points */
+  list-style-type: none;
+}
