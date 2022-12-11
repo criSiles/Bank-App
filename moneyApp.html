@@ -5,27 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Money</title>
-    <link rel="stylesheet" href="./moneyApp.css">
+    <link rel="stylesheet" href="./moneyApp.css" />
   </head>
-  <body>
-<h1>Balance account</h1>
-<h2>Savings</h2>
-<p id="savings" type="number">0</p>
-<h2>Income</h2>
-<p id="income" type="number" >0</p>
-<h2>Outcome</h2>
-<p id="outcome" type="number">0</p>
-<h2>History</h2>
-<ul id="history">
-</ul>
-<h2>Add transaction</h2>
-<form id="addTransactionForm" novalidate>
-  <label for="amount">Amount</label>
-  <input type="number" id="amount" name="amount" placeholder="Write a number"/>
-  <label for="description">Description</label>
-  <input type="text" id="description" name="description" placeholder="Write the concept"/>
-  <button type="submit" id="addTransaction" >Add transaction</button>
-</form>
-<script src="./moneyApp.js"></script>
-   </body>
+  <body class="darkMode">
+    <div class="titleBox">
+      <h1>Account Balance</h1>
+    </div>
+
+    <div class="infoSavings">
+      <div>
+        <h2>Savings</h2>
+        <p id="savings" type="number">0.00€</p>
+      </div>
+    </div>
+
+    <div class="infoMoney">
+      <div>
+        <h2>Income</h2>
+        <p id="income" type="number">0.00€</p>
+      </div>
+      <div>
+        <h2>Outcome</h2>
+        <p id="outcome" type="number">0.00€</p>
+      </div>
+    </div>
+
+    <h2>History</h2>
+    <ul id="history" class="transaction-history"></ul>
+    <h2>Add transaction</h2>
+    <form id="addTransactionForm" class="addTransaction-form" novalidate>
+      <label for="amount">Amount</label>
+      <input
+        type="number"
+        id="amount"
+        name="amount"
+        placeholder="Write a number"
+      />
+      <label for="description">Description</label>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        placeholder="Write the concept"
+      />
+      <button type="submit" class="addTransaction-button" id="addTransaction">
+        Add transaction
+      </button>
+    </form>
+    <script src="./moneyApp.js"></script>
+  </body>
 </html>

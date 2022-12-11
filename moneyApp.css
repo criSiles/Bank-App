@@ -3,15 +3,149 @@ body {
   margin: auto;
   width: 640px;
   padding: 50px;
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Verdana", sans-serif;
   color: black;
+  background-color: #d3cdcd;
+}
+.titleBox {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  background-color: #f2f2f2;
+  border: 2px solid #d3cdcd;
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+  padding: 8px;
+}
+
+#income {
+  color: rgb(4, 194, 13);
+}
+
+#outcome {
+  color: rgb(194, 4, 4);
+}
+
+.infoSavings {
+  display: flex;
+  margin: 20px 0 20px;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+  border: 2px solid #d3cdcd;
+  background-color: #f2f2f2;
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+
+.infoMoney {
+  display: flex;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  justify-content: space-between;
+  border-radius: 14px;
+  background-color: #f2f2f2;
+  border: 2px solid #d3cdcd;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+  padding: 40;
 }
 
 .historyItem {
-  background-color: #f2f2f2;
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
   /* remove bullet points */
   list-style-type: none;
+}
+
+.transaction-history {
+  list-style: none; /* remove the default bullet points */
+  padding: 0; /* remove the default padding */
+  margin: 0; /* remove the default margin */
+  display: flex; /* display the list items as flex items */
+  flex-flow: column wrap; /* allow the items to wrap to the next line if necessary */
+  align-items: center; /* align the items vertically to the center */
+  justify-content: center; /* align the items horizontally to the center */
+}
+
+/* style the list items (articles) */
+.transaction-article {
+  background-color: #f2f2f2;
+  display: flex; /* display the article as a flex container */
+  align-items: center; /* align the content of the article vertically to the center */
+  margin-right: 10px; /* add some space between the items */
+  padding: 10px; /* add some padding to the article */
+  border: 1px solid #ccc; /* add a border to the article */
+  border-radius: 5px; /* add rounded corners to the article */
+  box-shadow: 0 1px 2px #ccc; /* add a subtle box shadow to the article */
+  width: 80%; /* Same width as the sidebar + left and right padding */
+}
+
+.remove-button {
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 14px;
+  padding: 8px 12px;
+  border: 0;
+  color: #fff;
+  background: rgb(194, 4, 4);
+  line-height: 1.15;
+  font-size: 16px;
+  transition: all 0.1s ease;
+  margin-left: auto;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+
+.addTransaction-button {
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 14px;
+  padding: 8px 12px;
+  border: 0;
+  color: #fff;
+  background: #1de9b6;
+  line-height: 1.15;
+  font-size: 16px;
+  transition: all 0.1s ease;
+  margin-left: auto;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+
+button:hover {
+  transition: all 0.1s ease;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+}
+
+.addTransaction-form {
+  padding: 0; /* remove the default padding */
+  margin: 0; /* remove the default margin */
+  display: flex; /* display the list items as flex items */
+  flex-flow: row wrap; /* allow the items to wrap to the next line if necessary */
+  align-items: center; /* align the items vertically to the center */
+  justify-content: center; /* align the items horizontally to the center */
+  background-color: #f2f2f2; /* Add a background color to the form */
+  padding: 20px; /* Add some padding to the form */
+  border: 2px solid #d3cdcd; /* Add a border to the form */
+  border-radius: 14px; /* Add rounded corners to the form */
+  width: 100%;
 }

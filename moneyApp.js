@@ -59,10 +59,11 @@ function printHistory(transaction) {
 
   const transactionElement = document.createElement("article");
   transactionElement.setAttribute("id", idNumber);
+  transactionElement.setAttribute("class", "transaction-article");
 
   let transactionContent = `
   <p>${transaction.description} ${transaction.amount}</p>
-  <button onclick="deleteTransaction(${idNumber})" id="removeTransaction">Delete transaction</button>`;
+  <button onclick="deleteTransaction(${idNumber})" id="removeTransaction" class="remove-button">Delete transaction</button>`;
 
   // Write the transaction content in the article
 
