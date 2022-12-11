@@ -12,6 +12,7 @@ addTransactionFormElement.addEventListener("submit", async (event) => {
 
   inputMoneyElement.value = "";
   inputDescriptionElement.value = "";
+
   if (transaction.amount != "" && transaction.description != "") {
     printHistory(transaction);
     printMoney(transaction.amount);
@@ -39,14 +40,12 @@ function addTransactionToLocalStorage(transaction) {
 function removeTransactionInLocalStorage(transaction) {
   let transactions = getTransactionsFromLocalStorage();
 
-  // Find the transaction index through its id and its amount
   let transactionIndex = transactions.findIndex(
-    t =>
+    (t) =>
       t.description === transaction.description &&
       parseFloat(t.amount) === transaction.amount
   );
 
-  // Remove the transaction from the array
   transactions.splice(transactionIndex, 1);
 
   localStorage.setItem("transactions", JSON.stringify(transactions));
@@ -64,8 +63,6 @@ function printHistory(transaction) {
   let transactionContent = `
   <p>${transaction.description} ${transaction.amount}</p>
   <button onclick="deleteTransaction(${idNumber})" id="removeTransaction" class="remove-button">Delete transaction</button>`;
-
-  // Write the transaction content in the article
 
   transactionElement.innerHTML = transactionContent;
   histroyList.prepend(transactionElement);
@@ -101,18 +98,17 @@ function deleteTransaction(transactionID) {
     let amount = parseFloat(
       transactionElement.querySelector("p").innerHTML.split(" ")[1]
     );
-    let description =
-      transactionElement.querySelector("p").innerHTML.split(" ")[0];
+    let description = transactionElement
+      .querySelector("p")
+      .innerHTML.split(" ")[0];
 
     removeTransactionInLocalStorage({
       amount: amount,
       description: description,
     });
 
-    // Remove the transaction in the web page
     printMoney(amount, false);
 
-    // Update the savings in the web page
     updateSavings();
 
     transactionElement.remove();

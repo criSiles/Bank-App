@@ -7,6 +7,7 @@ body {
   color: black;
   background-color: #d3cdcd;
 }
+
 .titleBox {
   margin: auto;
   text-align: center;
@@ -33,17 +34,19 @@ body {
 
 .infoSavings {
   display: flex;
-  margin: 20px 0 20px;
+  flex-flow: column wrap;
+  margin: auto;
   width: 50%;
   text-align: center;
-  justify-content: center;
-  border: 2px solid #d3cdcd;
-  background-color: #f2f2f2;
+  justify-content: space-between;
   border-radius: 14px;
+  background-color: #f2f2f2;
+  border: 2px solid #d3cdcd;
   -webkit-border-radius: 14px;
   -moz-border-radius: 14px;
   -ms-border-radius: 14px;
   -o-border-radius: 14px;
+  padding: 3rem;
 }
 
 .infoMoney {
@@ -59,7 +62,7 @@ body {
   -moz-border-radius: 14px;
   -ms-border-radius: 14px;
   -o-border-radius: 14px;
-  padding: 40;
+  padding: 3rem;
 }
 
 .historyItem {
@@ -133,7 +136,7 @@ body {
 
 button:hover {
   transition: all 0.1s ease;
-  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #d3cdcd;
 }
 
 .addTransaction-form {
