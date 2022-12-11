@@ -131,6 +131,7 @@ function recoverData() {
       printHistory(transaction);
       printMoney(transaction.amount);
     });
+    updateSavings();
   }
 }
 
